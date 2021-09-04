@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210831194847_ProductAndCategoriesTableAdded.cs" />
+    <Compile Remove="Migrations\20210831194847_ProductAndCategoriesTableAdded.Designer.cs" />
+    <Compile Remove="Migrations\20210831230326_AddBlogTable.cs" />
+    <Compile Remove="Migrations\20210831230326_AddBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20210831231120_AddBlogTable.cs" />
+    <Compile Remove="Migrations\20210831231120_AddBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20210831231319_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20210831231319_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20210831231537_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20210831231537_CreateBlogTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>
