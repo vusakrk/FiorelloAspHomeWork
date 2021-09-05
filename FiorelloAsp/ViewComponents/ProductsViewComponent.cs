@@ -16,12 +16,17 @@ namespace FiorelloAsp.ViewComponents
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int take)
+        //public async Task<IViewComponentResult> InvokeAsync(int count=12)
+        //{
+        //    var model =  _context.Products.Include(p => p.Category)
+        //             .Where(p => p.HasDeleted == false).OrderByDescending(p => p.Id).Take(count);
+                    
+        //    return View(await Task.FromResult(model));
+        //}
+        public async Task<IViewComponentResult> InvokeAsync(int count=12)
         {
-            List<Product> products = _context.Products
-                                                .Where(p => p.HasDeleted == false)
-                                                  .Take(take).ToList();
-            return View(await Task.FromResult(products));
+            IEnumerable<Product> model = _context.Products.Include(p => p.Category).Take(count);
+            return View(await Task.FromResult(model));
         }
     }
 }

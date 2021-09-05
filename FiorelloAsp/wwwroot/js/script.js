@@ -26,7 +26,7 @@ $(document).ready(function () {
             url: "/Home/AddBasket?Id=" + id,
             type: "Get",
             success: function (res) {
-                $(".count").text(res);
+                $(".countProductBasket").text(res);
             }
         })
     })

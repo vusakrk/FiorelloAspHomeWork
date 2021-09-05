@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model IEnumerable<Product>
 
 
             @foreach (var product in Model)
@@ -14,7 +14,7 @@
                             <h6>@product.Title</h6>
                         </div>
                         <div class="price">
-                            <span class="text-black-50">Add to cart</span>
+                            <a id="addtobasket" data-id="@product.Id"><span class="text-black-50">Add to cart</span></a>
                             <span class="text-black-50">$@product.Price</span>
                         </div>
                     </div>
