@@ -2,13 +2,13 @@ $(document).ready(function () {
     let skip = 12;
     let Count = $('#ProductCount').val();
     $(document).on('click', '#loadMore', function () {
-        console.log(loadMore.val);
         $.ajax({
-            url: '/Product/LoadMore?skip=' + skip,
+            url: "/Product/LoadMore",
             type: 'GET',
             success: function (res) {
+                console.log(res);
                 $('.parent').append(res);
-                skip += 12;
+                skip += 8;
                
                 console.log(skip);
                 if (skip >= Count) {
@@ -19,6 +19,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#addtobasket', function () {
+        console.log("hello");
         const id = $(this).attr("data-id");
         event.preventDefault();
         $.ajax({

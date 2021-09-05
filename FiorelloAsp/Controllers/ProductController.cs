@@ -29,10 +29,11 @@ namespace FiorelloAsp.Controllers
             };
             return View(homeViewModel);
         }
-        public async Task <IActionResult> LoadMore(int take=8,int skip = 12)
+        public async Task <IActionResult> LoadMore()
         {
-            var model = await _context.Products.Include(p=>p.Image).Where(p=>p.HasDeleted==false)
-                            .OrderByDescending(p=>p.Id).Skip(skip).Take(take).ToListAsync();
+            var model = await _context.Products.Include(p=>p.Category)
+                            .Where(p=>p.HasDeleted==false)
+                            .Skip(8).Take(12).ToListAsync();
             return PartialView("_productPartial", model);
         }
     }
